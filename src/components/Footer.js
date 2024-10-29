@@ -12,10 +12,10 @@ function Footer() {
         width: '100%',
         backgroundColor: '#2C3E50',
         color: '#ECF0F1',
-        py: 2,
+        py: 1,
         boxShadow: '0 -1px 5px rgba(0, 0, 0, 0.2)',
         display: 'flex',
-        justifyContent: 'space-between', // Adjust as needed (e.g., space-between for icons)
+        justifyContent: 'space-between',
         alignItems: 'center',
         px: 3,
       }}

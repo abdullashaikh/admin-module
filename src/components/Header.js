@@ -17,7 +17,13 @@ function Header({ onSidebarToggle }) {
   };
 
   return (
-    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#2C3E50' }}>
+    <AppBar
+      position="fixed"
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+        backgroundColor: '#2C3E50',
+      }}
+    >
       <Toolbar>
         {/* Sidebar Toggle Button */}
         <IconButton color="inherit" edge="start" onClick={onSidebarToggle} sx={{ mr: 2 }}>
@@ -31,16 +37,24 @@ function Header({ onSidebarToggle }) {
 
         {/* User Information and Menu */}
         <Box display="flex" alignItems="center">
-          <Typography variant="body1" mr={2}>Abdulla Shaikh</Typography>
-          <IconButton color="inherit" onClick={handleMenuOpen}>
+          <Typography variant="body1" mr={2}>
+            Abdulla Shaikh
+          </Typography>
+          <IconButton
+            color="inherit"
+            onClick={handleMenuOpen}
+            aria-controls={anchorEl ? 'user-menu' : undefined}
+            aria-haspopup="true"
+          >
             <AccountCircleIcon />
           </IconButton>
           <Menu
+            id="user-menu"
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
             anchorOrigin={{
-              vertical: 'top',
+              vertical: 'bottom',
               horizontal: 'right',
             }}
             transformOrigin={{
